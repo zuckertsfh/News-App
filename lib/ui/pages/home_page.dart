@@ -53,10 +53,9 @@ class _HomePageState extends State<HomePage> {
 
                 return NotificationListener<ScrollNotification>(
                   onNotification: (ScrollNotification scrollInfo) {
-                    
                     //This is for load more pagination
 
-                    if(items.length == originals.length) return false;
+                    if (items.length == originals.length) return false;
 
                     if (scrollInfo.metrics.pixels ==
                         scrollInfo.metrics.maxScrollExtent) {
@@ -64,8 +63,8 @@ class _HomePageState extends State<HomePage> {
                         data.headLinesPagination.addAll(
                             originals.getRange(items.length, originals.length));
                       } else {
-                        data.headLinesPagination.addAll(originals.getRange(
-                            items.length, items.length + 5));
+                        data.headLinesPagination.addAll(
+                            originals.getRange(items.length, items.length + 5));
                       }
                       setState(() {});
                     }
@@ -134,27 +133,24 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: width(5)),
-                      child: TabBar(
-                        isScrollable: true,
-                        indicatorColor: Colors.black,
-                        labelColor: Colors.black,
-                        tabs: [
-                          Tab(
-                            text: "Business",
-                          ),
-                          Tab(
-                            text: "Entertainment",
-                          ),
-                          Tab(
-                            text: "Technology",
-                          ),
-                          Tab(
-                            text: "Health",
-                          ),
-                        ],
-                      ),
+                    TabBar(
+                      isScrollable: true,
+                      indicatorColor: Colors.black,
+                      labelColor: Colors.black,
+                      tabs: [
+                        Tab(
+                          text: "Business",
+                        ),
+                        Tab(
+                          text: "Entertainment",
+                        ),
+                        Tab(
+                          text: "Technology",
+                        ),
+                        Tab(
+                          text: "Health",
+                        ),
+                      ],
                     ),
                     Expanded(
                       child: Container(
