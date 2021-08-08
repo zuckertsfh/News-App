@@ -4,7 +4,7 @@
    <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="news_app"
+        android:label="News Appp"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
