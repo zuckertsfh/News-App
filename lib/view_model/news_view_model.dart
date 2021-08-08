@@ -24,6 +24,7 @@ class NewsVM with ChangeNotifier {
       return true;
     }());
 
+    // Parameter for consume api
     Map<String, dynamic> param = {
       "category": category?.toLowerCase() ?? null,
     };
@@ -31,6 +32,8 @@ class NewsVM with ChangeNotifier {
     ResponseAPI result = await ConsumeAPI().get(param, cancelTok);
 
     if (result.data != null) {
+      
+      // GET list data url image and description not NULL
       List<Article> articles = (result.data['articles'] as List<dynamic>)
           .map((e) => Article.fromJson(e))
           .toList()
